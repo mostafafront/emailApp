@@ -47,14 +47,17 @@ userInfo.forEach((item) => {
 
 let userCards = document.querySelectorAll(".userCard");
 
-let userImage = document.querySelector(".userImage");
 let userSubject = document.querySelectorAll(".userSubject");
 let userDate = document.querySelector(".userDate");
 let userBio = document.querySelector(".userBio");
+let userImgWrapper = document.querySelector(".userImgWrapper");
 
 userCards.forEach((item) => {
-  item.addEventListener("click", function (e) {
-    // console.log(btn)
+    item.addEventListener("click", function (e) {
+        
+    userImgWrapper.innerHTML = `<img class="userImage" src="./images/user1.jpg" alt="user iamge" width="200" height="200">`
+    let userImage = document.querySelector(".userImage");
+        
     userInfo.forEach((user) => {
       if (e.target.closest(".userCard").dataset.id == user.id) {
         userImage.src = user.image;
